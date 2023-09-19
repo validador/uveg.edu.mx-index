@@ -65,6 +65,7 @@ console.log(document.getElementById("invoice_").innerHTML + " " + "TEST 1");
 
 // THIS CODE SHOWS ELEMENT ONLY WHEN IT FITS WITH THE CONDITION
 if (val.length = 8) {
+document.getElementById('showCell').style.display = 'flex';
 document.getElementById('showVal_').style.display = "block";
 document.getElementById('hideInfo').style.display = "none";
 document.getElementById('showVal_').style.marginTop = '0px';
