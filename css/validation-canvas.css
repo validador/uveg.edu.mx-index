@@ -203,10 +203,10 @@ and (max-width : 639px) {
 and (min-width : 640px) 
 and (max-width : 720px) {
     .info0 {
-        font-size: 130%;
+        font-size: 133%;
     }
     .info1 {
-        font-size: 95%;
+        font-size: 102%;
     }
     .docto-img-wrapper_ {
         /* background-color: aqua; */
@@ -237,10 +237,10 @@ and (max-width : 720px) {
 and (min-width : 721px) 
 and (max-width : 960px) {
     .info0 {
-        font-size: 135%;
+        font-size: 137%;
     }
     .info1 {
-        font-size: 100%;
+        font-size: 105%;
     }
     .top-logo {
         top: 23%;
@@ -268,6 +268,9 @@ and (min-width : 961px)
 and (max-width : 1200px) {
     .info0 {
         font-size: 145%;
+    }
+    .info1 {
+        font-size: 110%;
     }
     .docto-img-wrapper_ {
         /* background-color: aqua; */
