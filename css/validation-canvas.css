@@ -203,10 +203,10 @@ and (max-width : 639px) {
 and (min-width : 640px) 
 and (max-width : 720px) {
     .info0 {
-        font-size: 135%;
+        font-size: 145%;
     }
     .info1 {
-        font-size: 98%;
+        font-size: 115%;
     }
     .docto-img-wrapper_ {
         /* background-color: aqua; */
