@@ -151,7 +151,7 @@
 }
 .info1 {
     font-family: Helvetica, sans-serif;
-    font-size: 3vh;
+    font-size: 100%;
 }
 /* ********************************************************** */
 /*                     SCREEN MEDIA QUERYS                    */
@@ -268,6 +268,9 @@ and (min-width : 961px)
 and (max-width : 1200px) {
     .info0 {
         font-size: 145%;
+    }
+    .info1 {
+        font-size: 100%;
     }
     .docto-img-wrapper_ {
         /* background-color: aqua; */
