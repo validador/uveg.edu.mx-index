@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ********************************************************* -->
+    <!--                   FONT AWESOME LIBRARY                    -->
+    <!-- ********************************************************* -->
+    <!-- <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- ********************************************************* -->
+    <!--                        GOOGLE FONTS                       -->
+    <!-- ********************************************************* -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap" rel="stylesheet">
+
+    <link href="" rel="shortcut icon">
+    <!-- ********************************************************* -->
+    <!--                          CSS LINKS                        -->
+    <!-- ********************************************************* -->
+    <link rel="stylesheet" href="css/nprogress.css">
+    <link rel="stylesheet" href="css/db.css">
+    <link rel="stylesheet" href="css/header&footer.css">
+    <link rel="stylesheet" href="css/validation-canvas.css">
+    <link rel="stylesheet" href="css/search-box.css">
+    <link rel="stylesheet" href="css/general-settings.css">
+    <link rel="stylesheet" href="css/box-advice.css">
+    <link rel="stylesheet" href="css/dialog-box.css">
+    <link rel="stylesheet" href="css/dialog-event.css">
+
+    <title>UVEG</title>
+</head>
+<body>
+    <!-- ********************************************************* -->
+    <!--                    SEARCHING DIALOG BOX                   -->
+    <!-- ********************************************************* -->
+    <!-- Add font awesome icons to buttons (note that the fa-spin class rotates the icon) -->
+    <div id="loader" class="loading-wrapper1">
+        <button class="buttonload">
+            <i class="fa fa-spinner fa-pulse"></i> Cargando la información, por favor espera <br>un momento
+        </button>
+    </div>
+    <!-- ********************************************************* -->
+    <!--                      DIALOG BOX EVENTS                    -->
+    <!-- ********************************************************* -->
+    <div id="dialog-box1" class="loading-wrapper2">
+        <div class="main-box">
+            <div class="title-box">
+                <h3>UVEG</h2>
+            </div>
+            <div class="content-box">
+                <i class="fa fa-exclamation-triangle"></i> 
+                <p class="content-box-txt">No ha ingresado una matrícula</p> 
+            </div>
+            <div class="btn-ok">
+                <button class="aceptar" onclick="pushOk1()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    <div id="dialog-box2" class="loading-wrapper2">
+        <div class="main-box">
+            <div class="title-box">
+                <h3>UVEG</h2>
+            </div>
+            <div class="content-box">
+                <i class="fa fa-exclamation-triangle"></i> 
+                <p class="content-box-txt">Ingrese una matrícula válida</p> 
+            </div>
+            <div class="btn-ok">
+                <button class="aceptar" onclick="pushOk2()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    <div id="dialog-box3" class="loading-wrapper2">
+        <div class="main-box">
+            <div class="title-box">
+                <h3>UVEG</h2>
+            </div>
+            <div class="content-box">
+                <i class="fa fa-exclamation-triangle"></i> 
+                <p class="content-box-txt">No se encontró coincidencia</p>
+            </div>
+            <div class="btn-ok">
+                <button class="aceptar" onclick="pushOk3()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <!-- ********************************************************* -->
+        <!-- ********************************************************* -->
+        <!--                        RESULTS BOX                        -->
+        <!-- ********************************************************* -->
+        <!-- ********************************************************* -->
+        <div class="main-canvas">
+            <div class="head-box">
+                <div class="ribbon0">
+                    <img class="back-image" src="images/cons_head1.png" alt="TOP IMAGE">
+                    <a href="https://uveg.edu.mx/index.php/es/">
+                    <img class="top-logo" src="logos/logo_uveg_1.svg" alt="LOGO UVEG">
+                    </a>
+                    <p class="info0">Validador de documentos</p>
+                </div>
+                <div id="boxSize" class="middle-box">
+                    <div class="ribbon1">
+                        <p class="info1">Información General</p>
+                    </div>
+                    <!-- ********************************************************* -->
+                    <!--                      VALIDATION MODULE                    -->
+                    <!-- ********************************************************* -->
+                    <div id="showVal_" class="container"> 
+                        <center>
+                        <img id="showDocto" class="docto-img_" src="icons/titulo.webp" alt="documento"> 
+                        </center>            
+                        <div id="showCell" class="table-cell">
+                            <section class="doc-img-wrapper">
+                                <div class="docto-img-wrapper_">
+                                <img class="docto-img" src="icons/titulo.webp" alt="documento" onclick = "data()">
+                                </div>
+                            </section>
+                            <div class="table-cell_">
+                                <div class="container2 tag-margin">
+                                    <div class="table-wrapper table-wrapper-mod">
+                                        <h5 class="tag0 tag-padding"><span>Matrícula</span></h5>
+                                        <p id="invoice_" class="tag1 tag-padding">CADENA DIGITAL</p>
+                                    </div>
+                                    <div class="table-wrapper">
+                                        <h5 class="tag0"><span>Nombre Completo</span></h5>
+                                        <p id="name_" class="tag1">NOMBRE DEL ALUMNO</p>
+                                    </div>                                     
+                                    <div class="table-wrapper">
+                                        <h5 class="tag0 tag-padding"><span>Folio del Documento</span></h5>
+                                        <p id="folio" class="tag1 tag-padding"><span>DCE-OFICEN-612-000122-23</span></p>
+                                    </div>       
+                                    <div class="table-wrapper">
+                                        <h5 class="tag0 tag-padding"><span>Tipo de Documento</span></h5>
+                                        <p id="docto" class="tag1 tag-padding"><span>Título Profesional</span></p>
+                                    </div>
+                                    <div class="table-wrapper table-wrapper-mod">
+                                        <h5 class="tag0 tag-padding"><span>Fecha de Expedición</span></h5>
+                                        <p id="date_" class="tag1 tag-padding">FECHA</p>
+                                    </div>
+                                    <div class="table-wrapper">
+                                        <h5 class="tag0"><span>Unidad Emisora</span></h5>
+                                        <p id="unity" class="tag1"><span>Dirección de Control Escolar</span></p>
+                                    </div>
+                                    <div class="table-wrapper">
+                                        <h5 class="tag0"><span>Programa de Estudio</span></h5>
+                                        <p id="prof_" class="tag1"><span>CARRERA</span></p>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="ribbon0">
+                <img class="back-image" src="images/cons_footer.webp" alt="LOW IMAGE">
+            </div>
+             <!-- ********************************************************* -->
+            <!--                  MAIN SEARCHBOX MODULE                    -->
+            <!-- ********************************************************* -->
+            <div class="invoice-wrapper">
+                <div class="invoice-wrapper_">
+                    
+                    <form class= "myform" name="form">
+
+                        <label class="form-data" for="form-data_">
+                            <input id="form-data" class="form-input" type="text" placeholder="*Matrícula" name="folio" onkeyup="searchFilter()" onblur="getVal2()" value="" autofocus>
+                        </label>
+
+                        <div class="button-wrapper">
+                            <button type="button" class="btn-form btn-search" id="showVal" onclick="load()"><span ng-bind="lengua" class= "ng-binding">Buscar</span>
+                            </button>
+
+                            <button type="reset" ng-click="newSearch()" class="btn-form btn-reset" id="hideVal" onclick="erase()"><span class="ng-binding">Restablecer</span>
+                            </button>
+                        </div>
+
+                    </form>             
+                </div>
+            </div>
+        </div>
+    </header>
+    
+        <center>
+        <!-- ********************************************************* -->
+        <!-- ********************************************************* -->
+        <!--                      DATABASE MODULE                      -->
+        <!-- ********************************************************* -->
+        <!-- ********************************************************* -->
+        <div class="tablesearch">
+            <table id="dataTable" align="center">
+            <tr class="header">
+            <th style="width:35%">ID</th>
+            <th style="width:25%">NOMBRE</th>
+            <th style="width:10%">FECHA</th>
+            <th style="width:10%">CARRERA</th>
+            <th style="width:20%">FOLIO</th>
+            </tr>
+            <tr>
+                <td>90008210</td>
+                <td>OMAR ARELLANO FÉLIX</td>
+                <td>11 de Abril de 2022</td>
+                <td>Licenciatura en Ciencias Humanas</td>
+                <td>DCE-OFICEN-612-000122-22</td>
+            </tr>
+            <tr>
+                <td>19001369</td>
+                <td>Yimi Castañeda Vázquez</td>
+                <td>15 de Marzo de 2023</td>
+                <td>Licenciatura en Pedagogía</td>
+                <td>DCE-OFICEN-612-000122-23</td>
+            </tr>
+            </table>
+        </div>
+        </center>
+        <!-- ********************************************************* -->
+        <!-- ********************************************************* -->
+        <!--                     END OF DATA BASE                      -->
+        <!-- ********************************************************* -->
+        <!-- ********************************************************* -->
+
+        <!-- ********************************************************* -->
+    <!--                   JAVASCRIPT LINKS                        -->
+    <!-- ********************************************************* -->
+    
+        <!-- JQUERY LIBRARY FOR TURNS AN HTML TABLE INTO AN ARRAY  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/url.js"></script>
+        <script src="js/db.js"></script>
+        <script src="js/nprogress.js"></script>
+        <script src="js/loading.js"></script>
+        <script src="js/validation.js"></script>
+        
+</body>
+</html>
